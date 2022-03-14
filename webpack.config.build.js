@@ -7,7 +7,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = (env) => {
 	const publicPath = env.production
-		? 'https://shishiv30.github.io/jquery-cui/'
+		? 'https://shishiv30.github.io/cui-demo/'
 		: 'http://localhost:8080/';
 	var config = baseConfig(env);
 	return merge(config, {

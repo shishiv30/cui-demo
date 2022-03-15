@@ -8,13 +8,13 @@
 		"stage": "webpack --config webpack.config.build.js && node server.js",
 		"prd": "webpack --config webpack.config.build.js --env production",
 		"score": "lighthouse --config-path=./lighthouse.config.js --output html --output-path ./report.html --view http://localhost:8080/index.html",
-		"scoreprd": "lighthouse --output html --output-path ./report.html --view https://shishiv30.github.io/cui-jquery/index.html",
+		"scoreprd": "lighthouse --output html --output-path ./report.html --view https://shishiv30.github.io/cui-demo/index.html",
 		"deploy": "node deploy"
 	},
 	"keywords": [
 		"demo page",
 		"uiframework",
-		"jquery"
+		"cui"
 	],
 	"author": "conjee zou",
 	"license": "MIT",
@@ -45,6 +45,6 @@
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
-		"jquery": "^3.6.0"
+		"cui-jquery": "^1.0.0"
 	}
 }

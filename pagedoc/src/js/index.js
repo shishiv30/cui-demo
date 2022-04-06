@@ -1,4 +1,4 @@
-import page from 'cui-jquery';
+var page = import(/* webpackPrefetch: true */ /* webpackChunkName: "cui" */ 'cui-jquery');
 import '../scss/index.scss';
 page();
 var mockPin = function (count) {

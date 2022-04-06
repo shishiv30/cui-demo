@@ -7,7 +7,6 @@
 	"html.autoClosingTags": false,
 	"html.format.enable": false,
 	"files.exclude": {
-		"**/dist/**": true,
 		"**/node_modules/**": true
 	}
 }

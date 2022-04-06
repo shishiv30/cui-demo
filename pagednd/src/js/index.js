@@ -1,5 +1,5 @@
-import cui from 'cui-jquery';
-cui();
+var page = import(/* webpackPrefetch: true */ /* webpackChunkName: "cui" */'cui-jquery');
+page();
 import css from '../scss/index.scss';
 
 function capFirst(string) {

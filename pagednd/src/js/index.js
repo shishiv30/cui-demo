@@ -1,6 +1,6 @@
-var page = import(/* webpackPrefetch: true */ /* webpackChunkName: "cui" */'cui-jquery');
+import page from 'cui-jquery';
 page();
-import css from '../scss/index.scss';
+import '../scss/index.scss';
 
 function capFirst(string) {
 	if (!string) {
@@ -2982,30 +2982,28 @@ window.flowTemplate = function (data) {
 window.goTo = function (e, data) {
 	console.log(e, data);
 };
-document.addEventListener('cui', function (e) {
-	$('#searchFilter').on('change', 'input,select', function () {
-		var $form = $('#searchFilter').data('form');
-		if ($form.isValid()) {
-			var keywords = $form.getValue();
-			var regxs = Object.keys(keywords).reduce(function (prev, next) {
-				var value = keywords[next];
-				if (!value) {
-					return prev;
-				}
-				if (typeof value === 'string') {
-					prev.push(new RegExp(value, 'i'));
-				} else if (value.length > 0) {
-					prev.push(new RegExp(value.join('|'), 'i'));
-				}
+$('#searchFilter').on('change', 'input,select', function () {
+	var $form = $('#searchFilter').data('form');
+	if ($form.isValid()) {
+		var keywords = $form.getValue();
+		var regxs = Object.keys(keywords).reduce(function (prev, next) {
+			var value = keywords[next];
+			if (!value) {
 				return prev;
-			}, []);
-			var data = window.flowdata.filter(function (e) {
-				var issue = regxs.find((regx) => {
-					return !regx.test(e.tag);
-				});
-				return !issue;
+			}
+			if (typeof value === 'string') {
+				prev.push(new RegExp(value, 'i'));
+			} else if (value.length > 0) {
+				prev.push(new RegExp(value.join('|'), 'i'));
+			}
+			return prev;
+		}, []);
+		var data = window.flowdata.filter(function (e) {
+			var issue = regxs.find((regx) => {
+				return !regx.test(e.tag);
 			});
-			$('#dataGridView').data('flow').reload(true, data);
-		}
-	});
+			return !issue;
+		});
+		$('#dataGridView').data('flow').reload(true, data);
+	}
 });

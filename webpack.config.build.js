@@ -1,4 +1,4 @@
-const baseConfig = require('./webpack.base.config.js');
+const baseConfig = require('./webpack.config.base.js');
 const { merge } = require('webpack-merge');
 const path = require('path');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -19,6 +19,11 @@ module.exports = (env) => {
 			clean: true,
 		},
 		recordsPath: path.join(__dirname, 'records.json'),
+		optimization: {
+			splitChunks: {
+				chunks: 'all',
+			},
+		},
 		plugins: [
 			// new BundleAnalyzerPlugin(),
 			// new WorkboxPlugin.GenerateSW({

@@ -2,8 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const pageSettings = require('./webpack.base.page.config.js');
-
+const pageSettings = require('./webpack.config.base.page.js');
 const entry = {};
 const plugins = [
 	new MiniCssExtractPlugin({

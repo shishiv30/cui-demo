@@ -1,2 +1,2 @@
-var page = import(/* webpackPrefetch: true */ /* webpackChunkName: "cui" */ 'cui-jquery');
+import page from 'cui-jquery';
 page();

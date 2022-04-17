@@ -1,2 +1,2 @@
-var cui = import(/* webpackPrefetch: true */ /* webpackChunkName: "cui" */ 'cui-jquery');
+import page from 'cui-jquery';
 cui();

@@ -1,5 +1,5 @@
 const favicon = './assets/logo.png';
-module.exports = {
+export default {
 	pages: [
 		{
 			name: 'pagedoc',

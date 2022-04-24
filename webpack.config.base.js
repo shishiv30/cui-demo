@@ -1,8 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const pageSettings = require('./webpack.config.base.page.js');
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import pageSettings from './webpack.config.base.page.js';
 const entry = {};
 const plugins = [
 	new MiniCssExtractPlugin({
@@ -18,7 +20,7 @@ pageSettings.pages.forEach((page) => {
 	plugins.push(new HtmlWebpackPlugin(page));
 });
 
-module.exports = (env) => {
+export default (env) => {
 	return {
 		entry: entry,
 		module: {

@@ -1,5 +1,9 @@
-var ghpages = require('gh-pages');
-var path = require('path');
+import ghpages from 'gh-pages';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 console.log('Publishing!!!!');
 ghpages.publish(
 	path.join(__dirname, 'dist'),

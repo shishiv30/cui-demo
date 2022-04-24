@@ -1,11 +1,14 @@
-const baseConfig = require('./webpack.config.base.js');
-const { merge } = require('webpack-merge');
-const path = require('path');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WebpackPwaManifest = require('webpack-pwa-manifest');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+import baseConfig from './webpack.config.base.js';
+import { merge } from 'webpack-merge';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// import BundleAnalyzerPlugin from 'webpack-bundle-analyzer').BundleAnalyzerPlugi;
+import WebpackPwaManifest from 'webpack-pwa-manifest';
+import WorkboxPlugin from 'workbox-webpack-plugin';
 
-module.exports = (env) => {
+export default (env) => {
 	const publicPath = env.production
 		? 'https://shishiv30.github.io/cui-demo/'
 		: 'http://localhost:8080/';

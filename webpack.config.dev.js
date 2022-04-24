@@ -1,8 +1,7 @@
-const baseConfig = require('./webpack.config.base.js');
-const { merge } = require('webpack-merge');
-const path = require('path');
+import baseConfig from './webpack.config.base.js';
+import { merge } from 'webpack-merge';
 
-module.exports = (env) => {
+export default (env) => {
 	var config = baseConfig(env);
 	return merge(config, {
 		mode: 'development',

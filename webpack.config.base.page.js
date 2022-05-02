@@ -22,5 +22,12 @@ export default {
 			chunks: ['pagednd'],
 			favicon: favicon,
 		},
+		{
+			name: 'pagesurvey',
+			filename: 'survey.html',
+			template: './pagesurvey/index.ejs',
+			chunks: ['pagesurvey'],
+			favicon: favicon,
+		},
 	],
 };

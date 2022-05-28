@@ -15,7 +15,7 @@ const plugins = [
 
 pageSettings.pages.forEach((page) => {
 	entry[page.name] = {
-		import: `./${page.name}/src/js/index.js`,
+		import: page.entry,
 	};
 	plugins.push(new HtmlWebpackPlugin(page));
 });

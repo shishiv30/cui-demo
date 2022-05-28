@@ -1,33 +1,40 @@
 const favicon = './assets/logo.png';
-export default {
+//default names
+const pageConfig = {
 	pages: [
 		{
-			name: 'pagedoc',
+			name: 'doc',
 			filename: 'index.html',
-			template: './pagedoc/index.ejs',
-			chunks: ['pagedoc'],
-			favicon: favicon,
 		},
 		{
-			name: 'pageabout',
-			filename: 'about.html',
-			template: './pageabout/index.ejs',
-			chunks: ['pageabout'],
-			favicon: favicon,
+			name: 'about',
 		},
 		{
-			name: 'pagednd',
-			filename: 'dnd.html',
-			template: './pagednd/index.ejs',
-			chunks: ['pagednd'],
-			favicon: favicon,
+			name: 'dnd',
 		},
 		{
-			name: 'pagesurvey',
-			filename: 'survey.html',
-			template: './pagesurvey/index.ejs',
-			chunks: ['pagesurvey'],
-			favicon: favicon,
+			name: 'survey',
 		},
 	],
 };
+pageConfig.pages.forEach((page) => {
+	if (page.name) {
+		if (!page.entry) {
+			page.entry = `./client/${page.name}/src/js/index.js`;
+		}
+		if (!page.template) {
+			page.template = `./client/${page.name}/index.ejs`;
+		}
+		if (!page.chunks) {
+			page.chunks = [page.name];
+		}
+		if (!page.favicon) {
+			page.favicon = favicon;
+		}
+		if (!page.filename) {
+			page.filename = `${page.name}.html`;
+		}
+	}
+});
+
+export default pageConfig;

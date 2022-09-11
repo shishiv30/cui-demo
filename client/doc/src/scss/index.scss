@@ -8,13 +8,6 @@
 	color: $color-bg;
 }
 
-.colors {
-	.circle {
-		float: left;
-		margin-right: 0.5rem;
-	}
-}
-
 @media (max-width: 767px) {
 	.highlight-mobile {
 		color: $color-major;

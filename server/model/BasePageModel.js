@@ -4,6 +4,7 @@ const queryGroupKey = ['utm', 'hack'];
 export default class BasePageModel extends BaseModel {
 	constructor(data) {
 		super({ name: data.name || 'BasePageModel' });
+
 		this.data = {
 			req: data.req,
 			...this.getDataByReq(data.req),

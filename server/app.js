@@ -1,13 +1,18 @@
 import express from 'express';
 import compression from 'compression';
-import cms from './router/cms.js';
+import route from './router/index.js';
+import session from './middleware/session.js';
+import config from './config.js';
 const app = express();
 
-app.use('/cms', cms);
 app.use(compression());
+
+session(app);
+
+app.use('/backend', route);
+
 app.use(express.static('dist'));
 
-// Serve the files on port 8080.
-app.listen(8080, function () {
-	console.log('Example app listening on port http://localhost:8080');
+app.listen(config.port, function () {
+	console.log(`Example app listening on port ${config.appUrl}`);
 });

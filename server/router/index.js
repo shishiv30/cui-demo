@@ -6,12 +6,12 @@ router.use((req, res, next) => {
 	next();
 });
 router.get('/', (req, res) => {
-	res.send('cms home page');
+	res.send('Home page');
 });
 
 // define the about route
 router.get('/about', (req, res) => {
-	res.send('About cms');
+	res.send('About page');
 });
 
 export default router;

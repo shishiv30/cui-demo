@@ -49,6 +49,8 @@
 	"dependencies": {
 		"compression": "^1.7.4",
 		"cui-jquery": "^1.0.0",
-		"express-useragent": "^1.0.15"
+		"express-session": "^1.17.3",
+		"express-useragent": "^1.0.15",
+		"uuid": "^9.0.0"
 	}
 }
